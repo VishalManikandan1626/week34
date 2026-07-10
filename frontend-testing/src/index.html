@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Management App (Testing Edition)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <div class="logo-area">
+        <span class="badge">Testing Edition</span>
+        <h1>Task Manager</h1>
+      </div>
+      <p class="subtitle">An interactive task board styled for a polished portfolio. Tested using Jest.</p>
+    </header>
+
+    <main class="app-main">
+      <!-- 1. LEFT COLUMN: Task Form -->
+      <section class="form-section">
+        <div class="card">
+          <h2>Create New Task</h2>
+          <form id="task-form" novalidate>
+            <div class="form-group">
+              <label for="task-title">Task Title <span class="required">*</span></label>
+              <input type="text" id="task-title" placeholder="e.g. Write integration tests" maxlength="100" required>
+              <div class="character-counter"><span id="char-count">0</span>/50</div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="task-category">Category</label>
+                <select id="task-category">
+                  <option value="General">General</option>
+                  <option value="Work">Work</option>
+                  <option value="Personal">Personal</option>
+                  <option value="Education">Education</option>
+                  <option value="Health">Health</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="task-due-date">Due Date</label>
+                <input type="date" id="task-due-date">
+              </div>
+            </div>
+
+            <div id="error-banner" class="error-banner hidden"></div>
+
+            <button type="submit" id="submit-btn" class="btn btn-primary">Add Task</button>
+            <button type="button" id="cancel-edit-btn" class="btn btn-secondary hidden">Cancel Edit</button>
+          </form>
+        </div>
+
+        <div class="card info-card">
+          <h3>💡 Testing Guide</h3>
+          <p>Every core operation inside this board (adding, editing, deleting, completing, searching, filtering, and validating) is completely covered by Jest unit tests located in the <code>tests/</code> folder.</p>
+          <div class="code-badge">npm run test</div>
+        </div>
+      </section>
+
+      <!-- 2. RIGHT COLUMN: Filters and Task List -->
+      <section class="list-section">
+        <div class="controls-card">
+          <!-- Search and Sort row -->
+          <div class="filter-row">
+            <div class="search-box">
+              <input type="text" id="search-input" placeholder="Search by title or category...">
+            </div>
+            
+            <div class="sort-box">
+              <label for="sort-select">Sort By:</label>
+              <select id="sort-select">
+                <option value="date-asc">Due Date (Asc)</option>
+                <option value="date-desc">Due Date (Desc)</option>
+                <option value="alphabetical">Alphabetical</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Status Filters -->
+          <div class="tab-filters">
+            <button class="tab-btn active" data-filter="all">All Tasks <span class="count" id="count-all">0</span></button>
+            <button class="tab-btn" data-filter="pending">Pending <span class="count" id="count-pending">0</span></button>
+            <button class="tab-btn" data-filter="completed">Completed <span class="count" id="count-completed">0</span></button>
+          </div>
+        </div>
+
+        <!-- Task List Render Target -->
+        <div class="task-list-container">
+          <ul id="task-list" class="task-list">
+            <!-- Items injected by app.js -->
+          </ul>
+          
+          <div id="empty-state" class="empty-state hidden">
+            <div class="empty-icon">✓</div>
+            <h3>No tasks found</h3>
+            <p>Get started by adding a task or adjusting your filters.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+# Dependency directories
+node_modules/
+
+# Testing coverage reports
+coverage/
+
+# Local env files
+.env
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db

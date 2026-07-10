@@ -1,0 +1,6 @@
+{
+  "name": "Frontend Jest Testing Playground",
+  "description": "An interactive learning playground and test runner demonstrating frontend unit testing using Jest, Babel, and Local Storage. Perfect for learning automated JavaScript testing.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

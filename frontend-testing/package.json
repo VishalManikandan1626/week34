@@ -1,0 +1,29 @@
+{
+  "name": "frontend-unit-testing-jest",
+  "version": "1.0.0",
+  "description": "A beginner-to-intermediate project demonstrating frontend unit testing of a Task Management Application using Jest, Babel, and Local Storage.",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "coverage": "jest --coverage"
+  },
+  "keywords": [
+    "javascript",
+    "jest",
+    "testing",
+    "unit-testing",
+    "frontend",
+    "localstorage",
+    "babel"
+  ],
+  "author": "Internship Developer",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.24.0",
+    "@babel/preset-env": "^7.24.0",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  }
+}
